@@ -1,1 +1,92 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Single Page Application</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }\n        nav { background: #333; color: #fff; padding: 15px; position: sticky; top: 0; }\n        nav a { color: white; margin: 0 15px; text-decoration: none; }\n        section { padding: 100px 20px; }\n        #home { background: #f4f4f4; }\n        #projects { background: #e2e2e2; }\n        #blogs { background: #d0d0d0; }\n        #contact { background: #b0b0b0; }\n    </style>\n</head>\n<body>\n    <nav>\n        <a href="#home">Home</a>\n        <a href="#projects">Projects</a>\n        <a href="#blogs">Blogs</a>\n        <a href="#contact">Contact</a>\n    </nav>\n    <section id="home">\n        <h1>Home</h1>\n        <p>Welcome to my single-page application!</p>\n    </section>\n    <section id="projects">\n        <h1>Projects</h1>\n        <p>Here are some of my projects.</p>\n    </section>\n    <section id="blogs">\n        <h1>Blogs</h1>\n        <p>Check out my blogs.</p>\n    </section>\n    <section id="contact">\n        <h1>Contact</h1>\n        <p>Feel free to contact me!</p>\n    </section>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Single Page Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to My Single Page Website</h1>
+        <p>This is the home section of the website.</p>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Details about my projects.</p>
+    </section>
+    <section id="blogs">
+        <h2>My Blogs</h2>
+        <p>Latest blog posts.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/{YOUR_FORM_ID}" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section {
+            padding: 50px 20px;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        #contact form label,
+        #contact form input,
+        #contact form textarea,
+        #contact form button {
+            margin: 5px 0;
+        }
+    </style>
+</body>
+</html>
