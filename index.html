@@ -3,82 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Single Page Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Surprise Sakhile Ndlovu - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #222;
+            color: #fff;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: inline-block;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0066cc;
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: #0066cc;
+            font-weight: bold;
+            border-bottom: 3px solid #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            color: #222;
+            margin-top: 0;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            color: #222;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .card h3 {
+            color: #222;
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            main {
+                padding: 1rem 0.5rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <h1>Surprise Sakhile Ndlovu</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="blogs.html" class="nav-link">Blogs</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Surprise Sakhile Ndlovu, a Software Developer and UI/UX Designer.</p>
-        <p>I specialize in building web applications and creating beautiful user interfaces.</p>
-    </section>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Surprise Sakhile Ndlovu, a passionate Software Developer and UI/UX Designer based in South Africa.</p>
+            <p>I specialize in building web applications and creating beautiful, user-centered interfaces. With experience in desktop widgets, Python development, and data science, I'm dedicated to solving problems through innovative technology solutions.</p>
+
+            <h2 style="margin-top: 2rem;">About Me</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Skills & Expertise</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Desktop Applications (Wt/Qt)</li>
+                        <li>UI/UX Design (Figma)</li>
+                        <li>Python Programming</li>
+                        <li>Data Science & ML</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Education</h3>
+                    <p><strong>BSc Informatics</strong></p>
+                    <p>University of South Africa</p>
+                    <p>Specializations in Systems Analysis, Advanced Development, and Human-Computer Interaction</p>
+                </div>
+
+                <div class="card">
+                    <h3>Career Focus</h3>
+                    <p>Freelance Software Developer creating innovative solutions for clients globally. Passionate about continuous learning and contributing to the tech community.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Surprise Sakhile Ndlovu. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/Sakhilendlovu" target="_blank" style="color: #fff;">GitHub</a> | 
+            <a href="https://linkedin.com/in/surprise-sakhile-ndlovu-880a836a" target="_blank" style="color: #fff;">LinkedIn</a> | 
+            <a href="https://medium.com/@ndlovusakhile698" target="_blank" style="color: #fff;">Medium</a>
+        </p>
+    </footer>
+
     <script>
-        const navLinks = document.querySelectorAll('nav a');
+        // Set active nav link based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href.includes('#')) {
-                    e.preventDefault();
-                    const targetId = href;
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
+            const href = link.getAttribute('href');
+            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
         });
     </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        #home {
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
 </body>
 </html>
