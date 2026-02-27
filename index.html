@@ -10,43 +10,31 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     <section id="home">
-        <h1>Welcome to My Single Page Website</h1>
-        <p>This is the home section of the website.</p>
-    </section>
-    <section id="projects">
-        <h2>My Projects</h2>
-        <p>Details about my projects.</p>
-    </section>
-    <section id="blogs">
-        <h2>My Blogs</h2>
-        <p>Latest blog posts.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/{YOUR_FORM_ID}" method="post">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Surprise Sakhile Ndlovu, a Software Developer and UI/UX Designer.</p>
+        <p>I specialize in building web applications and creating beautiful user interfaces.</p>
     </section>
     <script>
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                const href = this.getAttribute('href');
+                if (href.includes('#')) {
+                    e.preventDefault();
+                    const targetId = href;
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             });
         });
     </script>
@@ -54,6 +42,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
         }
         header {
             background: #333;
@@ -65,6 +54,8 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -74,18 +65,19 @@
             color: #fff;
             text-decoration: none;
         }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
         section {
             padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        #contact form {
-            display: flex;
-            flex-direction: column;
+        #home {
+            text-align: center;
         }
-        #contact form label,
-        #contact form input,
-        #contact form textarea,
-        #contact form button {
-            margin: 5px 0;
+        h1 {
+            color: #333;
         }
     </style>
 </body>
